@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;500&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  /* Primary Palette */
+  --color-navy-darkest: #020c1b;
+  --color-navy-dark: #0a192f;
+  --color-navy-light: #112240;
+  --color-navy-lightest: #233554;
+
+  /* Text Palette */
+  --color-slate-dark: #495670;
+  --color-slate-base: #8892b0;
+  --color-slate-light: #a8b2d1;
+  --color-slate-lightest: #ccd6f6;
+  --color-white: #e6f1ff;
+
+  /* Accent Palette */
+  --color-accent-base: #64ffda;         /* Bright teal - Primary Accent */
+  --color-accent-tint: #a7ffee;
+  --color-accent-shade: #52d3b8;
+
+  /* Expanded Palette for Section Themes */
+  --color-deep-space-blue: #0d1b2a;    /* Very dark, slightly desaturated blue */
+  --color-midnight-blue: #1b263b;    /* Dark blue, less saturated than navy-dark */
+  --color-starry-night-blue: #2a4467; /* A brighter, more saturated dark blue */
+  --color-twilight-purple: #4A00E0;   /* Vibrant purple - Secondary Accent Potential */
+  --color-deep-purple: #301934;      /* Darker, more muted purple */
+  --color-dawn-pink: #FF6B6B;         /* Soft reddish-pink (use sparingly or for specific themes) */
+  --color-sunrise-orange: #FFA500;    /* Bright orange (use sparingly) */
+  --color-sky-teal: #20C997;          /* A vibrant teal, slightly different from accent */
+  --color-forest-green: #1E5631;      /* Deep green */
+  --color-spring-green: #58B09C;      /* Lighter, muted green */
+  --color-ocean-blue: #0077B6;        /* Clear, medium blue */
+  --color-steel-blue: #4682B4;       /* Muted, professional blue */
+  --color-light-periwinkle: #CCCCFF;  /* Light blue-purple for highlights */
+
+  /* Fonts, Transitions, Shadows (keep existing) */
+  --font-family-sans: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-family-mono: "Roboto Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --transition-short: all 0.15s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --transition-base: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --transition-long: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-accent: 0 0 20px 0 color-mix(in srgb, var(--color-accent-base) 30%, transparent);
+
+  @keyframes animatedBodyGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  @keyframes flowGradientText {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+  }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    font-family: var(--font-family-sans);
+    color: var(--color-slate-base);
+    @apply antialiased leading-relaxed;
+    background: linear-gradient(to bottom, var(--color-navy-darkest), var(--color-navy-dark));
+    background-size: 100% 200%;
+    animation: animatedBodyGradient 30s ease infinite alternate;
+    min-height: 100vh;
+  }
+
+  section {
+    @apply py-20 md:py-28 relative;
+  }
+
+  /* --- REVISED SECTION BACKGROUND THEMES FOR BLENDING & HARMONY --- */
+
+    .section-theme-home {
+    background: linear-gradient(to bottom, var(--color-deep-space-blue) 0%, var(--color-midnight-blue) 60%, var(--color-starry-night-blue) 100%);
+  }
+  /* Ends on: var(--color-starry-night-blue) */
+
+
+  /* Theme 2: About Section - Starry Night back to Core Navy */
+  .section-theme-about {
+    background: linear-gradient(to bottom, var(--color-starry-night-blue) 0%, var(--color-navy-light) 50%, var(--color-navy-dark) 100%);
+  }
+  /* Ends on: var(--color-navy-dark) */
+
+
+   /* Theme 3: Skills Section - Core Navy with a hint of lighter navy/deep space blue */
+  .section-theme-skills {
+    background: linear-gradient(to bottom, var(--color-navy-dark) 0%, var(--color-navy-light) 40%, var(--color-deep-space-blue) 100%);
+  }
+  /* Ends on: var(--color-deep-space-blue) */
+
+
+  /* Theme 4: Projects Section - Deep Space Blue back to Core Navy */
+  .section-theme-projects {
+    background: linear-gradient(to bottom, var(--color-deep-space-blue) 0%, var(--color-midnight-blue) 50%, var(--color-navy-dark) 100%);
+  }
+  /* Ends on: var(--color-navy-dark) */
+
+
+  /* Theme 5: Resume Section - Core Navy with a hint of steel blue for professionalism */
+  .section-theme-resume {
+    background: linear-gradient(to bottom, var(--color-navy-dark) 0%, var(--color-navy-light) 45%, var(--color-steel-blue) 100%);
+  }
+  /* Ends on: var(--color-steel-blue) */
+
+/* Theme 6: Contact Section - Steel Blue back to darkest navies */
+  .section-theme-contact {
+    background: linear-gradient(to bottom, var(--color-steel-blue) 0%, var(--color-navy-dark) 60%, var(--color-navy-darkest) 100%);
+  }
+  /* Ends on: var(--color-navy-darkest) */
+  /* --- End REVISED Section Background Themes --- */
+
+  h1, .h1-style { @apply font-semibold text-[var(--color-white)] text-4xl sm:text-5xl md:text-6xl leading-tight mb-6; } /* Ensure H1 is bright */
+  h2, .h2-style { @apply font-semibold text-[var(--color-slate-lightest)] text-3xl sm:text-4xl leading-snug mb-5; }
+  h3, .h3-style { @apply font-semibold text-[var(--color-slate-light)] text-2xl sm:text-3xl leading-normal mb-4; }
+  h4, .h4-style { @apply font-medium text-[var(--color-slate-light)] text-xl sm:text-2xl leading-normal mb-3; }
+
+  a { color: var(--color-accent-base); transition: var(--transition-base); text-decoration: none; }
+  a:hover { color: var(--color-accent-tint); } /* Brighter hover for links */
+
+  /* Custom Scrollbar (keep existing) */
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--color-navy-darkest); }
+  ::-webkit-scrollbar-thumb { background: var(--color-navy-lightest); border-radius: 10px; border: 2px solid var(--color-navy-darkest); }
+  ::-webkit-scrollbar-thumb:hover { background: var(--color-slate-dark); }
+  * { scrollbar-width: thin; scrollbar-color: var(--color-navy-lightest) var(--color-navy-darkest); }
+
+  .clip-angled {
+    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0% 100%);
+  }
+}
+
