@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import { FiChevronsRight } from 'react-icons/fi';
 import { Link as ScrollLink } from 'react-scroll';
 
-import profileImage from '../../assets/profile.jpeg';
+import profileImage from '../../assets/profile.jpg';
 
 const About = () => {
   const validCustomEase = [0.6, 0.05, 0.01, 0.9];

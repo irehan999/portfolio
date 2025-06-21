@@ -6,7 +6,7 @@ import { FiDownloadCloud } from 'react-icons/fi';
 
 const Resume = () => {
   const validCustomEase = [0.6, 0.05, 0.01, 0.9];
-  const resumePdfPath = '/Rehan_Irfan_Resume.pdf'; // Ensure this PDF is in your /public folder
+  const resumePdfPath = '/mern-internship.pdf'; // Ensure this PDF is in your /public folder
 
   const sectionVariants = {
     hidden: { opacity: 0 },
