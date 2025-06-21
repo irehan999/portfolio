@@ -203,7 +203,7 @@ const About = () => {
                 smooth={true}
                 duration={500}
                 offset={-100}
-                className="group relative inline-flex items-center overflow-hidden bg-[var(--color-accent-base)] text-[var(--color-navy-darkest)] hover:text-[var(--color-navy-darkest)] font-semibold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                className="group relative inline-flex items-center overflow-hidden bg-[var(--color-accent-base)] text-[var(--color-navy-darkest)] hover:text-[var(--color-navy-darkest)] font-semibold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
               >
                 <span className="relative z-10">View My Resume</span>
                 <FiChevronsRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1.5 relative z-10" />
